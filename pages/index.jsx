@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Homepage</title>
+        <title>Recipes Website</title>
       </Head>
       <div>
         <Header />
-        <h1> Recipe</h1>
+        <h1>Recipes Website</h1>
       </div>
     </>
   );
