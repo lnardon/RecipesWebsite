@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <div>
         <Header />
-        <h1> Recipe</h1>
+        <h1>Recipe</h1>
       </div>
     </>
   );

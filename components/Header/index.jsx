@@ -1,6 +1,8 @@
+import styles from "./styles.module.css";
+
 function Header() {
   return (
-    <div className="headerContainer">
+    <div className={styles.headerContainer}>
       <img src="" alt="" />
     </div>
   );
