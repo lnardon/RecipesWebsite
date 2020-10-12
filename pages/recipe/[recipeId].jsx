@@ -30,6 +30,7 @@ function RecipePage() {
         title={recipe.title}
         summary={recipe.summary}
       />
+      <div>{recipe.instructions}</div>
     </div>
   );
 }
