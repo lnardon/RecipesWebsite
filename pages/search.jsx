@@ -8,13 +8,16 @@ export default function Search() {
   const [results, setResults] = useState([]);
 
   async function searchRecipe(query) {
-    const response = await fetch("http://localhost:3000/api/recipeSearch", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(query),
-    });
+    const response = await fetch(
+      "https://recipes-website.lnardon.vercel.app/api/recipeSearch",
+      {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(query),
+      }
+    );
     const parsedResponse = await response.json();
     setResults(parsedResponse.results);
   }

@@ -2,7 +2,7 @@
 
 This is a personal project using Next.js to create a recipes website, improving my coding skills and also my cooking skills.
 
-## [Try it out here](https://recipes-website-ezlrfjnfh.vercel.app/ "Homepage")
+## [Try it out here](https://recipes-website.lnardon.vercel.app/ "Homepage")
 
 ### What I Used on this project
 
