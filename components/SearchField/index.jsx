@@ -11,7 +11,10 @@ function SearchField({ getSearchValue }) {
         className={styles.searchInput}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button className="searchBtn" onClick={() => getSearchValue(query)}>
+      <button
+        className={styles.searchBtn}
+        onClick={() => getSearchValue(query)}
+      >
         Search
       </button>
     </div>

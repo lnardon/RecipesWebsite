@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 
 import SearchField from "../components/SearchField";
+import SearchRecipeCard from "../components/SearchRecipeCard";
 
 export default function Search() {
   const [results, setResults] = useState([]);
@@ -16,7 +17,6 @@ export default function Search() {
     });
     const parsedResponse = await response.json();
     setResults(parsedResponse.results);
-    console.log(parsedResponse);
   }
   return (
     <>
@@ -26,7 +26,13 @@ export default function Search() {
       <div>
         <SearchField getSearchValue={searchRecipe} />
         {results.map((result) => {
-          return <div>{result.title}</div>;
+          return (
+            <SearchRecipeCard
+              id={result.id}
+              title={result.title}
+              image={result.image}
+            />
+          );
         })}
       </div>
     </>
