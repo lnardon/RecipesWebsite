@@ -16,7 +16,7 @@ export default async (req, res) => {
     from: process.env.EMAIL,
     to: req.body.email,
     subject: "Shopping Cart",
-    text: req.body.list,
+    html: req.body.list,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
