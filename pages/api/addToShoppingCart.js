@@ -15,21 +15,21 @@ export default async (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL,
     to: req.body.email,
-    subject: "Shopping Cart",
-    html: req.body.list,
+    subject: "Shopping List",
+    text: req.body.list,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
+  transporter.sendMail(mailOptions, (error, info) => {
+    let response;
     if (error) {
-      const response = {
+      response = {
         statusCode: 500,
         body: JSON.stringify({
           error: error.message,
         }),
       };
-      res.send(response);
     }
-    const response = {
+    response = {
       statusCode: 200,
       body: JSON.stringify({
         message: `Email processed succesfully!`,
