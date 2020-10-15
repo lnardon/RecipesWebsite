@@ -1,5 +1,6 @@
 .ingredientsListContainer {
   width: 100%;
+  max-width: 1024px;
   box-sizing: content-box;
 }
 
@@ -8,6 +9,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  background-color: #f7f7f7;
+  border-bottom: 2px solid #e1e1e1;
+  border-radius: 0.5rem;
+  padding: 0rem 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .ingredientName {

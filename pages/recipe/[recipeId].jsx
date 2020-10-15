@@ -20,16 +20,30 @@ function RecipePage({ recipe }) {
       <Head>
         <title>NRD Recipes - {recipe.title}</title>
       </Head>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <h4
-          onClick={() => Router.back("/search")}
-          style={{ cursor: "pointer" }}
+          onClick={() => Router.back()}
+          style={{
+            width: "100%",
+            maxWidth: 1024,
+            cursor: "pointer",
+            margin: "1rem 0rem 0.5rem 0rem",
+          }}
         >
           back
         </h4>
         <RecipePageHeader image={recipe.image} title={recipe.title} />
         <RecipeIngredientsList ingredients={recipe.extendedIngredients} />
-        <div dangerouslySetInnerHTML={createMarkup()}></div>
+        <div
+          style={{ width: "100%", maxWidth: 1024, marginBottom: "2rem" }}
+          dangerouslySetInnerHTML={createMarkup()}
+        ></div>
       </div>
     </>
   );

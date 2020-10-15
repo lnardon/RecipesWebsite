@@ -6,14 +6,17 @@ function RecipeIngredientsList({ ingredients }) {
 
   async function sendEmail() {
     let ingredientNames = ingredients.map((ingredient) => ingredient.name);
-    let response = await fetch("http://localhost:3000/api/addToShoppingCart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        list: ingredientNames.join(",\n"),
-      }),
-    });
+    let response = await fetch(
+      "https://recipes-website.lnardon.vercel.app/api/addToShoppingCart",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          list: ingredientNames.join(",\n"),
+        }),
+      }
+    );
   }
 
   return (
@@ -24,20 +27,23 @@ function RecipeIngredientsList({ ingredients }) {
           type="text"
           name="email"
           id="email"
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button onClick={sendEmail}>Add to Cart</button>
+        <button onClick={sendEmail}>Add to Shopping List</button>
       </div>
-      {ingredients.map((ingredient) => {
-        return (
-          <div className={styles.ingredientContainer}>
-            <h1 className={styles.ingredientName}>{ingredient.name}</h1>
-            <h2>
-              {ingredient.amount} {ingredient.measures.metric.unitShort}
-            </h2>
-          </div>
-        );
-      })}
+      <div style={{ margin: "2rem 0rem" }}>
+        {ingredients.map((ingredient) => {
+          return (
+            <div className={styles.ingredientContainer}>
+              <h2>
+                {ingredient.amount} {ingredient.measures.metric.unitShort}
+              </h2>
+              <h1 className={styles.ingredientName}>{ingredient.name}</h1>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
