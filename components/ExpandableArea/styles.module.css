@@ -1,0 +1,93 @@
+.container {
+  display: block;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  margin: 1rem 0rem;
+  outline: none;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  outline: none;
+  border-bottom: 2px solid rgb(1, 235, 25);
+  padding-bottom: 0.5rem;
+}
+
+.icon {
+  width: 35px;
+  filter: invert(100);
+}
+
+.rightArrow {
+  animation: rightAnimation 0.5s ease forwards;
+}
+
+.downArrow {
+  animation: downAnimation 0.5s ease forwards;
+}
+
+.content {
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  background-color: rgb(43, 43, 43);
+  border-radius: 0.25rem;
+  margin: 1rem 0rem 0rem 0rem;
+  outline: none;
+}
+
+.open {
+  animation: openAnimation 0.5s ease forwards;
+}
+
+.closed {
+  animation: closeAnimation 0.5s ease forwards;
+}
+
+@keyframes openAnimation {
+  from {
+    opacity: 0;
+    height: 0%;
+    padding: 0rem;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+    padding: 0.25rem;
+  }
+}
+
+@keyframes closeAnimation {
+  from {
+    opacity: 1;
+    padding: 0.25rem;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    padding: 0rem;
+  }
+}
+
+@keyframes rightAnimation {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes downAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
+}
