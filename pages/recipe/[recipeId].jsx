@@ -3,47 +3,51 @@ import Router, { useRouter } from "next/router";
 
 import RecipePageHeader from "../../components/RecipePageHeader";
 import RecipeIngredientsList from "../../components/RecipeIngredientsList";
+import ExpandableArea from "../../components/ExpandableArea";
+import styles from "./styles.module.css";
 
 function RecipePage({ recipe }) {
   const { isFallback } = useRouter();
 
-  function createMarkup() {
-    return {
-      __html: recipe.instructions,
-    };
-  }
   if (isFallback) {
     return <h1>loading</h1>;
   }
+
   return (
     <>
       <Head>
-        <title>NRD Recipes - {recipe.title}</title>
+        <title>Recipe - {recipe.title}</title>
       </Head>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <h4
-          onClick={() => Router.back()}
-          style={{
-            width: "100%",
-            maxWidth: 1024,
-            cursor: "pointer",
-            margin: "1rem 0rem 0.5rem 0rem",
-          }}
-        >
-          back
-        </h4>
-        <RecipePageHeader image={recipe.image} title={recipe.title} />
-        <RecipeIngredientsList ingredients={recipe.extendedIngredients} />
-        <div
-          style={{ width: "100%", maxWidth: 1024, marginBottom: "2rem" }}
-          dangerouslySetInnerHTML={createMarkup()}
-        ></div>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h4 onClick={() => Router.back()} className={styles.backBtn}>
+            go back
+          </h4>
+          <RecipePageHeader image={recipe.image} title={recipe.title} />
+
+          <ExpandableArea
+            title="Ingredients"
+            content={
+              <RecipeIngredientsList ingredients={recipe.extendedIngredients} />
+            }
+          />
+          <ExpandableArea
+            title="Instructions"
+            content={
+              <div>
+                {recipe?.analyzedInstructions[0]?.steps.map((instruction) => {
+                  return (
+                    <div style={{ padding: "0rem 1rem" }}>
+                      <h2>
+                        {instruction.number} - {instruction.step}
+                      </h2>
+                    </div>
+                  );
+                })}
+              </div>
+            }
+          />
+        </div>
       </div>
     </>
   );
