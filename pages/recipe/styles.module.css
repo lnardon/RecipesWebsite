@@ -1,0 +1,18 @@
+.container {
+  background-color: #191919;
+  color: #fafafa;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0rem 1rem;
+}
+
+.content {
+  max-width: 699px;
+}
+
+.backBtn {
+  cursor: pointer;
+  margin: 2rem 0rem;
+}
