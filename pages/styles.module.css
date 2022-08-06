@@ -18,18 +18,49 @@
 }
 
 .logo {
-  width: 150px;
+  width: 100px;
 }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #fafafa;
+.loader {
+  height: 150px;
+  margin: 2rem 1rem;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+
+.searchResults {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .randomBtn {
+  width: 100%;
+  max-width: 300px;
   padding: 0.5rem 2rem;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+  border: 3px solid greenyellow;
+  color: greenyellow;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin-bottom: 2rem;
+}
+
+.randomBtn:hover {
+  border-color: transparent;
+  color: #191919;
+  background-color: greenyellow;
 }
