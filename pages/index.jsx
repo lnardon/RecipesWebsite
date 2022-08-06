@@ -3,7 +3,7 @@ import Router from "next/router";
 import { useState } from "react";
 
 import SearchField from "../components/SearchField";
-import SearchRecipeCard from "../components/SearchRecipeCard";
+import RecipeCard from "../components/RecipeCard";
 import getRandomInt from "../hooks/getRandomInt";
 import styles from "./styles.module.css";
 
@@ -66,7 +66,7 @@ export default function Home() {
           <div className={styles.searchResults}>
             {results?.map((result) => {
               return (
-                <SearchRecipeCard
+                <RecipeCard
                   key={result.id}
                   id={result.id}
                   title={result.title}
