@@ -1,9 +1,12 @@
 .searchRecipeCardContainer {
   width: 100%;
+  max-width: 300px;
   display: flex;
   cursor: pointer;
-  padding: 0.5rem;
-  border: 2px solid #313131;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
 }
 
 .searchRecipeCardImage {
