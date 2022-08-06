@@ -1,7 +1,6 @@
 .ingredientsListContainer {
   width: 100%;
-  max-width: 1024px;
-  box-sizing: content-box;
+  padding: 0.5rem 0.25rem;
 }
 
 .ingredientContainer {
@@ -9,13 +8,20 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: #515151;
-  border-radius: 0.5rem;
   padding: 0rem 1rem;
   margin-bottom: 0.25rem;
+  border-bottom: 2px dashed rgba(218, 218, 218, 0.215);
 }
 
 .ingredientName {
   text-transform: capitalize;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem 0.25rem;
+}
+
+.ingredientAmount {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0.25rem;
 }
