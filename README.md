@@ -1,6 +1,12 @@
-# [Recipeas Website](https://recipes-website.lnardon.vercel.app/ "Homepage")
+<p align="center">
+  <img style="width:150px" src="./static/favicon.ico">
+</p>
+ <h1 align="center">Recipeas Website</h1>
 
-Personal project to improve and add more variety to my cooking repertoire.
+<p align="center">
+  Personal project to improve and add more variety to my cooking repertoire.
+</p>
+
 
 <p align="center">
   <img style="width:100%" src="./demo.gif">
