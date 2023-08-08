@@ -4,7 +4,7 @@
  <h1 align="center">Recipeas Website</h1>
 
 <p align="center">
-  Personal project to improve and add more variety to my cooking repertoire.
+  Personal project to improve my coding skills and add more variety to my cooking repertoire.
 </p>
 
 
